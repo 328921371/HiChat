@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Wayou">
+        <meta name="description" content="hichat | a simple chat application built with node.js and websocket">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>一起嗨起来</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="wrapper">
+        	<!--标题-->
+            <div class="banner">
+                <h2>Hi 聊</h2>
+                <span id="status"></span>
+            </div>
+            <!--显示历史记录-->
+            <div id="historyMsg">
+            </div>
+            <!--主体内容-->
+            <div class="controls" >
+            	<!--四个按钮控制-->
+                <div class="items">
+                	<!--控制字体颜色-->
+                    <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+                    <!--控制标签按钮-->
+                    <input id="emoji" type="button" value="emoji" title="emoji" />
+                    <!--发送标签-->
+                    <label for="sendImage" class="imageLable">
+                        <input type="button" value="image"  />
+                        <input id="sendImage" type="file" value="image"/>
+                    </label>
+                    <!--清空消息-->
+                    <input id="clearBtn" type="button" value="clear" title="clear screen" />
+                </div>
+                <!--输入文本-->
+                <textarea id="messageInput" placeHolder="enter to send"></textarea>
+                <!--发送消息-->
+                <input id="sendBtn" type="button" value="SEND">
+                <div id="emojiWrapper">
+                </div>
+            </div>
+        </div>
+        <div id="loginWrapper">
+            <p id="info">正在拼命链接服务器...</p>
+            <div id="nickWrapper">
+                <input type="text" placeHolder="name" id="nicknameInput" />
+                <input type="button" value="OK" id="loginBtn" />
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="scripts/hichat.js"></script>
+    </body>
+</html>
