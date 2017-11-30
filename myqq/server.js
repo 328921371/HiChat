@@ -1,4 +1,4 @@
-//服务器及页面响应部分
+﻿//服务器及页面响应部分
 var express = require('express'),
 
     app = express(),
@@ -55,5 +55,5 @@ io.on('connection', function(socket) {
 表示向除自己外的所有人发送该事件，另外，上面代码中，io表示服务器整个socket连接，所以代码
 io.sockets.emit('foo')表示所有人都可以收到该事件。*/
 
-server.listen(process.env.PORT || 8080);
+server.listen(process.env.PORT || 3000);
 console.log('服务器开启成功')
